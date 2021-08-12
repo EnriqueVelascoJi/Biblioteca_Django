@@ -19,7 +19,7 @@ class Venta(models.Model):
     ven_forma_pago = models.CharField('Forma de pago', choices=formas_pago)
     ven_fecha = models.DateTimeField('Fecha', auto_now=True, auto_now_add=False)
     ven_impuesto = models.IntegerField('Impuesto', default=16)
-    ven_total = models.DecimalField('Total')
+    ven_total = models.DecimalField('Total', max_digits=7, decimal_places=2)
     
     class Meta:
         """Meta definition for Venta."""

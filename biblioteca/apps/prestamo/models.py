@@ -19,8 +19,8 @@ class Prestamo(models.Model):
     class Meta:
         """Meta definition for Prestamo."""
 
-        verbose_name = 'Prestamo'
-        verbose_name_plural = 'Prestamos'
+        verbose_name = 'Préstamo'
+        verbose_name_plural = 'Préstamos'
 
     def __str__(self):
         """Unicode representation of Prestamo."""
@@ -35,12 +35,14 @@ class FichaPrestamo(models.Model):
     prestamo = models.ForeignKey('Préstamo', Prestamo, on_delete=CASCADE)
     libro = models.ForeignKey('Libro', Libro, on_delete=CASCADE)
     fp_estado = models.BooleanField('Estado', default=True)
+
     class Meta:
         """Meta definition for FichaPrestamo."""
 
-        verbose_name = 'FichaPrestamo'
-        verbose_name_plural = 'FichaPrestamos'
+        verbose_name = 'Ficha de Préstamo'
+        verbose_name_plural = 'Fichas de Prestamo'
 
     def __str__(self):
         """Unicode representation of FichaPrestamo."""
-        pass
+        return "{}.- ({}) -- ({})".format(self.fp_id, self.libro.lib_titulo, self.fp_estado)
+

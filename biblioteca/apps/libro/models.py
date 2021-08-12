@@ -14,7 +14,7 @@ class Libro(models.Model):
     lib_edicion = models.IntegerField('Edición', default=1)
     lib_copias_venta = models.IntegerField('Copias_venta', default=0)
     lib_copias_servicio = models.IntegerField('Copias_servicio', default=0)
-    lib_precio = models.DecimalField('Precio', default=0)
+    lib_precio = models.DecimalField('Precio', max_digits=6, decimal_places=2, default=0)
 
     class Meta:
         """Meta definition for Libro."""
