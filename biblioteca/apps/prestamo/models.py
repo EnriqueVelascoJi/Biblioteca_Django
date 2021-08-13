@@ -1,7 +1,4 @@
-from django.db.models.deletion import CASCADE
-from biblioteca.apps.libro.models import Libro
 from django.db import models
-
 #Importamos los modelos externos
 from apps.libro.models import Libro
 
@@ -11,8 +8,8 @@ class Prestamo(models.Model):
     """Model definition for Prestamo."""
 
     # TODO: Define fields here
-    pre_id = models.IntegerField('Id', primary_key=True)
-    pre_hora_prestamo = models.TimeField('Hora prestámo', auto_now=True, auto_now_add=True)
+    pre_id = models.AutoField('Id', primary_key=True)
+    pre_hora_prestamo = models.TimeField('Hora prestámo', auto_now=True)
     pre_hora_regreso = models.TimeField('Hora regreso')
     pre_fecha = models.DateField('Fechas', auto_now=True)
 
@@ -31,9 +28,9 @@ class FichaPrestamo(models.Model):
     """Model definition for FichaPrestamo."""
 
     # TODO: Define fields here
-    fp_id = models.IntegerField('Id', primary_key=True)
-    prestamo = models.ForeignKey('Préstamo', Prestamo, on_delete=CASCADE)
-    libro = models.ForeignKey('Libro', Libro, on_delete=CASCADE)
+    fp_id = models.AutoField('Id', primary_key=True)
+    prestamo = models.ForeignKey(Prestamo, on_delete=models.CASCADE)
+    libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
     fp_estado = models.BooleanField('Estado', default=True)
 
     class Meta:

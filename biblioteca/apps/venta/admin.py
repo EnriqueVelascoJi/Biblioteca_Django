@@ -30,11 +30,11 @@ class DetalleVentaAdmin(admin.ModelAdmin):
     list_display = (
         'dv_id',
         'venta',
-        'libro.lib_titulo',
+        'libro',
         'dv_cantidad',
         'dv_descuento'
     )
-    list_filter = ('',)
+    # list_filter = ('',)
     search_fields = (
         'libro.lib_titulo',
     )

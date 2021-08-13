@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.core.exceptions import ImproperlyConfigured
 
 #Importamos el modelo
 from .models import Libro

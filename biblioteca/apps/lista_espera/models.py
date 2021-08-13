@@ -1,6 +1,8 @@
-from biblioteca.apps.libro.models import Libro
-from biblioteca.apps.socio.models import Socio
 from django.db import models
+
+#Importar modelo
+from apps.socio.models import Socio
+from apps.libro.models import Libro
 
 # Create your models here.
 
@@ -9,9 +11,9 @@ class ListaEspera(models.Model):
     """Model definition for ListaEspera."""
 
     # TODO: Define fields here
-    le_id = models.IntegerField('Id', primary_key=True)
-    socio = models.ForeignKey('Socio', Socio)
-    libro = models.ForeignKey('Libro', Libro)
+    le_id = models.AutoField('Id', primary_key=True)
+    socio = models.ForeignKey(Socio, on_delete=models.CASCADE)
+    libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
     le_estado = models.BooleanField('Estado', default=True)
 
 

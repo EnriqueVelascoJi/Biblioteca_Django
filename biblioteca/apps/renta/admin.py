@@ -11,11 +11,11 @@ class RentaAdmin(admin.ModelAdmin):
 
     list_display = (
         'ren_id',
-        'socio.soc_nombre',
+        'socio',
         'ren_fecha_renta',
         'ren_fecha_regreso',
     )
-    list_filter = ('',)
+    # list_filter = ('',)
     search_fields = (
         'socio.soc_nombre',
         'ren_fecha_renta',
@@ -31,7 +31,7 @@ class FichaRentaAdmin(admin.ModelAdmin):
     list_display = (
         'fr_id',
         'renta',
-        'libro.lib_titulo',
+        'libro',
         'fr_estado',
     )
     list_filter = ('fr_estado',)

@@ -11,8 +11,8 @@ class ListaEsperaAdmin(admin.ModelAdmin):
 
     list_display = (
         'le_id',
-        'socio.soc_nombre',
-        'libro.lib_titulo',
+        'socio',
+        'libro',
         'le_estado',
     )
     list_filter = ('le_estado',)

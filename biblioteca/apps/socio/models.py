@@ -11,7 +11,7 @@ class Socio(models.Model):
         ('0', 'mala')
     ]
     # TODO: Define fields here
-    soc_id = models.IntegerField('Id', primary_key=True)
+    soc_id = models.AutoField('Id', primary_key=True)
     soc_nombre = models.CharField('Nombre', max_length=40)
     soc_telefono = models.CharField('Télefono', max_length=15)
     soc_email = models.CharField('Email', max_length=40)

@@ -11,10 +11,10 @@ class Renta(models.Model):
     """Model definition for Renta."""
 
     # TODO: Define fields here
-    ren_id = models.IntegerField('Id', primary_key=True)
-    socio = models.ForeignKey('Socio', Socio)
-    ren_fecha_renta = models.DateField('Fecha de renta', auto_now=True, auto_now_add=True)
-    ren_fecha_regreso = models.DateField('Fecha de regreso', auto_now=True, auto_now_add=True)
+    ren_id = models.AutoField('Id', primary_key=True)
+    socio = models.ForeignKey(Socio, on_delete=models.CASCADE)
+    ren_fecha_renta = models.DateField('Fecha de renta', auto_now=True)
+    ren_fecha_regreso = models.DateField('Fecha de regreso', )
 
     class Meta:
         """Meta definition for Renta."""
@@ -31,9 +31,9 @@ class FichaRenta(models.Model):
     """Model definition for FichaRenta."""
 
     # TODO: Define fields here
-    fr_id = models.IntegerField('Id', primary_key=True)
-    renta = models.ForeignKey('Renta', Renta)
-    libro = models.ForeignKey('Libro', Libro)
+    fr_id = models.AutoField('Id', primary_key=True)
+    renta = models.ForeignKey(Renta, on_delete=models.CASCADE)
+    libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
     fr_estado = models.BooleanField('Estado', default=True)
 
     class Meta:

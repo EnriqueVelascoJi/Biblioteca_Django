@@ -29,7 +29,7 @@ class FichaPrestamoAdmin(admin.ModelAdmin):
     list_display = (
         'fp_id',
         'prestamo',
-        'libro.lib_id',
+        'libro',
         'fp_estado',
     )
     search_fields = ('libro.lib_titulo',)

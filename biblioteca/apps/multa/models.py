@@ -11,8 +11,8 @@ class Multa(models.Model):
 
     # TODO: Define fields here
 
-    mul_id = models.IntegerField('Id', primary_key=True)
-    socio = models.ForeignKey('Socio', Socio)
+    mul_id = models.AutoField('Id', primary_key=True)
+    socio = models.ForeignKey(Socio, on_delete=models.CASCADE)
     mul_monto = models.DecimalField('Monto de multa', max_digits=6, decimal_places=2)
     mul_descripcion = models.CharField('Descripción', max_length=50)
     mul_estado = models.BooleanField('Estado de la multa', default=True)

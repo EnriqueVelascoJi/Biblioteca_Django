@@ -11,7 +11,7 @@ class MultaAdmin(admin.ModelAdmin):
 
     list_display = (
         'mul_id',
-        'socio.soc_nombre',
+        'socio',
         'mul_monto',
         'mul_estado',
         'mul_descripcion'

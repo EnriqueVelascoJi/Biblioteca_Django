@@ -1,12 +1,12 @@
 from django.db import models
-from django.db.models.fields import CharField
+
 
 # Create your models here.
 class Libro(models.Model):
     """Model definition for Libro."""
 
     # TODO: Define fields here
-    lib_id = models.IntegerField('Id', primary_key=True)
+    lib_id = models.AutoField('Id', primary_key=True)
     lib_titulo = models.CharField('Título', max_length=50)
     lib_autor = models.CharField('Autor', max_length=50)
     lib_isbn = models.CharField('ISBN', max_length=13)
