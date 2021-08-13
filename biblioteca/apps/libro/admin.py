@@ -9,7 +9,21 @@ from .models import Libro
 class LibroAdmin(admin.ModelAdmin):
     '''Admin View for Libro'''
 
-    list_display = ('',)
-    list_filter = ('',)
-    search_fields = ('',)
-    ordering = ('',)
+    list_display = (
+        'lib_id',
+        'lib_titulo',
+        'lib_autor',
+        'lib_isbn',
+        'lib_editorial',
+        'lib_copias_venta',
+        'lib_copias_servicio',
+        'lib_precio'
+    )
+    list_filter = ('lib_editorial',)
+    search_fields = (
+        'lib_titulo',
+        'lib_autor',
+        'lib_isbn',
+        'lib_editorial',
+    )
+    ordering = ('lib_id',)

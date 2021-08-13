@@ -8,16 +8,30 @@ from .models import Prestamo, FichaPrestamo
 class PrestamoAdmin(admin.ModelAdmin):
     '''Admin View for Prestamo'''
 
-    list_display = ('',)
-    list_filter = ('',)
-    search_fields = ('',)
-    ordering = ('',)
+    list_display = (
+        'pre_id',
+        'pre_hora_prestamo',
+        'pre_hora_regreso',
+        'pre_fecha'
+    )
+    list_filter = ('pre_fecha',)
+    search_fields = (
+        'pre_hora_prestamo',
+        'pre_hora_regreso',
+        'pre_fecha'
+    )
+    ordering = ('pre_id',)
 
 @admin.register(FichaPrestamo)
 class FichaPrestamoAdmin(admin.ModelAdmin):
     '''Admin View for FichaPrestamo'''
 
-    list_display = ('',)
-    list_filter = ('',)
-    readonly_fields = ('',)
-    ordering = ('',)
+    list_display = (
+        'fp_id',
+        'prestamo',
+        'libro.lib_id',
+        'fp_estado',
+    )
+    search_fields = ('libro.lib_titulo',)
+    list_filter = ('fp_estado',)
+    ordering = ('fp_id',)
