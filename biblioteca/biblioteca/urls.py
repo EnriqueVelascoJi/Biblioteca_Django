@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include, include
 
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 
@@ -23,5 +24,6 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('libro/', include('apps.libro.urls'))
 ]
 
